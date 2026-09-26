@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: random1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: random1
+  template:
+    metadata:
+      labels:
+        app: random1 
+    spec:
+      containers:
+        - name: random1 
+          image: buildaz104.azurecr.io/random1
+          ports:
+          - containerPort: 80
